@@ -84,6 +84,7 @@ namespace CST_150_Milestone
             // ProfilePicPB
             // 
             this.ProfilePicPB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ProfilePicPB.Image = global::CST_150_Milestone.Properties.Resources.account;
             this.ProfilePicPB.Location = new System.Drawing.Point(8, 7);
             this.ProfilePicPB.Name = "ProfilePicPB";
             this.ProfilePicPB.Size = new System.Drawing.Size(256, 256);

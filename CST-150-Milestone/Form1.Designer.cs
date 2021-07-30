@@ -29,6 +29,7 @@ namespace CST_150_Milestone
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.studentControl = new CST_150_Milestone.StudentControl();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -72,6 +73,7 @@ namespace CST_150_Milestone
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.studentControl);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Student Database";
             this.ResumeLayout(false);

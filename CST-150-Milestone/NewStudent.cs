@@ -12,7 +12,6 @@ namespace CST_150_Milestone
 {
     public partial class NewStudent : Form
     {
-        private static readonly Bitmap s_blank = new(256, 256);
         /// <summary>
         /// New Student created via Enroll Button
         /// </summary>
@@ -24,7 +23,6 @@ namespace CST_150_Milestone
         public NewStudent()
         {
             InitializeComponent();
-            ProfilePicPB.Image = s_blank;
         }
 
         private void ProfilePicPB_Click(object sender, EventArgs e)
@@ -43,6 +41,11 @@ namespace CST_150_Milestone
 
         private void EnrollBtn_Click(object sender, EventArgs e)
         {
+            if(ProfilePicPB.Image == null)
+            {
+                MessageBox.Show(this, "Cannot leave Profile picture blank!\nPlease select an image", "Profile picture blank", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
             _ = int.TryParse(StudentIdTxt.Text, out int id);
             _ = double.TryParse(GpaTxt.Text, out double gpa);
             Student = new(StudentNameTxt.Text, BirthdayDtp.Value, id) {

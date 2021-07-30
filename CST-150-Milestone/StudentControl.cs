@@ -13,8 +13,6 @@ namespace CST_150_Milestone
 {
     public partial class StudentControl : UserControl
     {
-        private static Bitmap s_blank = new (256, 256);
-
         public StudentControl()
         {
             InitializeComponent();
@@ -33,7 +31,7 @@ namespace CST_150_Milestone
             BirthPlaceLbl.Text = string.Empty;
             GpaLbl.Text = string.Empty;
             NotesRtb.Text = string.Empty;
-            pictureBox1.Image = s_blank;
+            pictureBox1.Image = null;
         }
 
         /// <summary>
