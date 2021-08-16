@@ -16,7 +16,7 @@
     .
     <a href="https://github.com/Blizzardo1/cst150w1a1/issues">Request Feature</a>
   </p>
-</p>
+
 
 ![Contributors](https://img.shields.io/github/contributors/Blizzardo1/cst150w1a1?color=dark-green) ![Forks](https://img.shields.io/github/forks/Blizzardo1/cst150w1a1?style=social) ![Stargazers](https://img.shields.io/github/stars/Blizzardo1/cst150w1a1?style=social) ![Issues](https://img.shields.io/github/issues/Blizzardo1/cst150w1a1) ![License](https://img.shields.io/github/license/Blizzardo1/cst150w1a1) 
 

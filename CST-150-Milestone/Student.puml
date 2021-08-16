@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+
+class Student {
+         _name: string;
+         _birthday: DateTime
+        _emailAddress: string
+        _studentId: StudentId
+        _birthPlace: string
+        _gpa: double
+        _profilePic: byte[]
+        _notes: string
+        +Name: string
+        +Age: double
+        +BirthDate: DateTime 
+        +EmailAddress: string
+        +StudentId: StudentId
+        +BirthPlace: string
+        +GradePointAverage: double
+        +ProfilePicture: byte[]
+        +Notes: string
+        +Student(name: string, birthday: DateTime, studentId: int)
+}
+ 
+class StudentId {
+        +FormatCardAsGCU: static bool
+        +IncludeName: static bool
+        +FullName: string
+        +StudentId(Id: int)
+        +ToString() : string
+}
+
+class PropertyManager {
+        +PropertyChanged:  PropertyChangedEventHandler
+        #SetProperty<T>(field: ref T, value: T, propertyName: string): void
+        #OnPropertyChanged(string propertyName): void
+}
+
+class Form1 {
+            _students: Dictionary<string, Student> 
+            _imageList: ImageList            
+            button1_Click(sender: object, e: EventArgs): void
+            listView1_SelectedIndexChanged(sender: object, e: EventArgs): void
+            +Form1()
+}
+
+class NewStudent {    
+        +Student: Student       
+        ProfilePicPB_Click(sender: object, e: EventArgs) : void
+        EnrollBtn_Click(sender: object, e: EventArgs) : void
+        +NewStudent()
+}
+
+StudentId <|-- Student
+Student <|-- PropertyManager
+NewStudent <|-- Form1
+Student <|-- NewStudent
+Student <|-- Form1
+
+@enduml
