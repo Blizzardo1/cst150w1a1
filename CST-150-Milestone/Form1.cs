@@ -27,23 +27,21 @@ namespace CST_150_Milestone
         private void button1_Click(object sender, EventArgs e)
         {
             NewStudent ns = new();
-            if (ns.ShowDialog() == DialogResult.OK)
-            {
-                Student stu = ns.Student;
-                string key = $"{stu.Name}:{stu.StudentId}";
-                _imageList.Images.Add(key, stu.ProfilePicture.FromBytes());
-                listView1.LargeImageList = _imageList;
-                listView1.SmallImageList = _imageList;
-                ListViewItem lvi = new(stu.Name, key);
-                _students.Add(key, stu);
-                listView1.Items.Add(lvi);
-            }
+            if (ns.ShowDialog() != DialogResult.OK) return;
+            Student stu = ns.Student;
+            string key = $"{stu.Name}:{stu.StudentId}";
+            _imageList.Images.Add(key, stu.ProfilePicture.FromBytes());
+            listView1.LargeImageList = _imageList;
+            listView1.SmallImageList = _imageList;
+            ListViewItem lvi = new(stu.Name, key);
+            _students.Add(key, stu);
+            listView1.Items.Add(lvi);
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (sender == null || listView1.SelectedItems.Count == 0) return;
-            var item = listView1.SelectedItems[0];
+            ListViewItem item = listView1.SelectedItems[0];
             Student stu = _students[item.ImageKey];
             studentControl.DisplayStudent(stu);
         }

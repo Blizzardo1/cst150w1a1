@@ -86,4 +86,7 @@
         AAAAAAAAAAAAAP//AAD//wAA//8AAP//AAA=
 </value>
   </data>
+  <data name="ProfilePicFilter" xml:space="preserve">
+    <value>Images (*.png, *.bmp, *.dib, *.jpg, *.jpeg)|*.png;*.bmp;*.dib;*.jpg;*.jpeg|Portable Network Graphics Image (*.png)|*.png|Bitmap Image (*.bmp,*.dib)|*.bmp;*.dib|JPEG Image (*.jpg, *.jpeg)|*.jpg;*.jpeg|All Files (*.*)|*.*</value>
+  </data>
 </root>
