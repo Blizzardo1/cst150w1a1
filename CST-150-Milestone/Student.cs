@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace CST_150_Milestone
 {
     public class Student : PropertyManager
     {
         private const int OneYearInSeconds = 31_557_600;
+
+        public static Student Empty = new("", DateTime.MinValue, 0) {
+            ProfilePicture = Properties.Resources.account.ToBytes()
+        };
 
         private string _name;
         private DateTime _birthday;

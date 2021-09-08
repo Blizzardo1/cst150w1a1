@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace CST_150_Milestone
@@ -55,6 +48,19 @@ namespace CST_150_Milestone
                 Notes = NotesRtb.Text,
                 ProfilePicture = ProfilePicPB.Image.ToBytes()
             };
+        }
+
+        internal void Repopulate(Student stu)
+        {
+            StudentNameTxt.Text = stu.Name;
+            EmailAddressTxt.Text = stu.EmailAddress;
+            BirthPlaceTxt.Text = stu.BirthPlace;
+            BirthdayDtp.Value = stu.BirthDate;
+            StudentIdTxt.Text = stu.StudentId.ToString();
+            GpaTxt.Text = stu.GradePointAverage.ToString();
+            NotesRtb.Text = stu.Notes;
+            ProfilePicPB.Image = stu.ProfilePicture.FromBytes();
+            EnrollBtn.Text = "Commit";
         }
     }
 }

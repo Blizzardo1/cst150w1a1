@@ -33,6 +33,8 @@ namespace CST_150_Milestone
             this.button1 = new System.Windows.Forms.Button();
             this.studentControl = new CST_150_Milestone.StudentControl();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.modStuBtn = new System.Windows.Forms.Button();
+            this.dismissBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -55,7 +57,6 @@ namespace CST_150_Milestone
             // 
             // listView1
             // 
-            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -65,17 +66,40 @@ namespace CST_150_Milestone
             this.listView1.View = System.Windows.Forms.View.List;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // modStuBtn
+            // 
+            this.modStuBtn.Location = new System.Drawing.Point(144, 495);
+            this.modStuBtn.Name = "modStuBtn";
+            this.modStuBtn.Size = new System.Drawing.Size(117, 23);
+            this.modStuBtn.TabIndex = 3;
+            this.modStuBtn.Text = "Modify";
+            this.modStuBtn.UseVisualStyleBackColor = true;
+            this.modStuBtn.Click += new System.EventHandler(this.modStuBtn_Click);
+            // 
+            // dismissBtn
+            // 
+            this.dismissBtn.Location = new System.Drawing.Point(27, 495);
+            this.dismissBtn.Name = "dismissBtn";
+            this.dismissBtn.Size = new System.Drawing.Size(111, 23);
+            this.dismissBtn.TabIndex = 4;
+            this.dismissBtn.Text = "Dismiss Student";
+            this.dismissBtn.UseVisualStyleBackColor = true;
+            this.dismissBtn.Click += new System.EventHandler(this.dismissBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 530);
+            this.Controls.Add(this.dismissBtn);
+            this.Controls.Add(this.modStuBtn);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.studentControl);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Student Database";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -85,6 +109,8 @@ namespace CST_150_Milestone
         private System.Windows.Forms.Button button1;
         private StudentControl studentControl;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button modStuBtn;
+        private System.Windows.Forms.Button dismissBtn;
     }
 }
 
