@@ -24,7 +24,7 @@ namespace CST_150_Milestone
 
         private void AddStudent(Student stu)
         {
-            string key = $"{stu.Name}:{stu.StudentId}";
+            string key = $"{stu.Name}"; // $"{stu.Name}:{stu.StudentId}";
             _imageList.Images.Add(key, stu.ProfilePicture.FromBytes());
             listView1.LargeImageList = _imageList;
             listView1.SmallImageList = _imageList;
@@ -104,6 +104,23 @@ namespace CST_150_Milestone
             _students.Remove(item.ImageKey);
             listView1.Items.Remove(item);
             await sql.Delete("studentid", stu.StudentId);
+        }
+
+        private async void searchBtn_Click(object sender, EventArgs e)
+        {
+            ListViewItem[] items = new ListViewItem[listView1.Items.Count];
+            listView1.Items.CopyTo(items, 0);
+            var results = from query in items where query.ImageKey.Contains(queryTxt.Text) select query;
+            if (!results.Any()) {
+                MessageBox.Show(this, $"The database found no matches containing \"{queryTxt.Text}\"", "Student(s) not found", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            string key = results.First().ImageKey;
+            int index = listView1.Items.IndexOf(results.First());
+            if ( index < 0) return;
+            listView1.Items[index].Selected = true;
+            listView1.Select();
+            
         }
     }
 }

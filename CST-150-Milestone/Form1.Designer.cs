@@ -35,6 +35,8 @@ namespace CST_150_Milestone
             this.listView1 = new System.Windows.Forms.ListView();
             this.modStuBtn = new System.Windows.Forms.Button();
             this.dismissBtn = new System.Windows.Forms.Button();
+            this.queryTxt = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -57,10 +59,10 @@ namespace CST_150_Milestone
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Location = new System.Drawing.Point(12, 54);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(389, 477);
+            this.listView1.Size = new System.Drawing.Size(389, 435);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -86,11 +88,30 @@ namespace CST_150_Milestone
             this.dismissBtn.UseVisualStyleBackColor = true;
             this.dismissBtn.Click += new System.EventHandler(this.dismissBtn_Click);
             // 
+            // queryTxt
+            // 
+            this.queryTxt.Location = new System.Drawing.Point(12, 21);
+            this.queryTxt.Name = "queryTxt";
+            this.queryTxt.Size = new System.Drawing.Size(308, 23);
+            this.queryTxt.TabIndex = 5;
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.Location = new System.Drawing.Point(326, 21);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
+            this.searchBtn.TabIndex = 6;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 530);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.queryTxt);
             this.Controls.Add(this.dismissBtn);
             this.Controls.Add(this.modStuBtn);
             this.Controls.Add(this.listView1);
@@ -101,6 +122,7 @@ namespace CST_150_Milestone
             this.Text = "Student Database";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -111,6 +133,8 @@ namespace CST_150_Milestone
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button modStuBtn;
         private System.Windows.Forms.Button dismissBtn;
+        private System.Windows.Forms.TextBox queryTxt;
+        private System.Windows.Forms.Button searchBtn;
     }
 }
 
